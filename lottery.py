@@ -15,13 +15,21 @@ def lottoName(name):
     for num2 in winNums2:
         numbers2 = numbers2.append(pd.Series([num2.text])).reset_index(drop=True)
     winN = []
-    for i in range(6,12):
-        winN.append(numbers1[i].strip())
-    print(','.join(winN))
-    print(numbers2[1].strip())
+    if name == 'Lotto649' or name == 'superlotto638':
+        for i in range(6,12):
+            winN.append(numbers1[i].strip())
+        print(','.join(winN))
+        print(numbers2[1].strip())
+    if name == 'Lotto740':
+        for i in range(7,14):
+            winN.append(numbers1[i].strip())
+        print(','.join(winN))
+        print(numbers2[1].strip())
 
 if __name__ == '__main__':
     print('最新大樂透號碼：')
     lottoName('Lotto649')
     print('最新威力彩號碼：')
     lottoName('superlotto638')
+    print('最新大福彩號碼：')
+    lottoName('Lotto740')
